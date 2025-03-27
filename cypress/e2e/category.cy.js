@@ -10,6 +10,17 @@ describe('Test Category', () => {
         //Assert
         cy.contains("table tr", "SF").should("exist")
     })
+    it('Ajout category valide 2 ', () => {
+        //Arrange
+        const cat = "Roman"
+        cy.visit('/category/new')
+        //Act
+        cy.get('#category_label').type(cat)
+        cy.get('.btn').click()
+        cy.wait(1000)
+        //Assert
+        cy.contains("table tr", cat).should("exist")
+    })
     it('Ajout Erreur 500 doublon category', ()=> {
         cy.visit('/category/new')
         cy.get('#category_label').type("SF")
@@ -33,11 +44,11 @@ describe('Test Category', () => {
         cy.contains("table tr", category).should("exist")
     })
 
-    it('Modification category non identique', ()=>{
+    it('Modification category identique', ()=>{
         //Arrange
         cy.visit('/category')
         const category = "Nouveau"
-        const id = 2;
+        const id = 1;
         //Act
         cy.get('[href="/category/'+ id +'/edit"]').click()
         cy.wait(1000)
@@ -51,7 +62,6 @@ describe('Test Category', () => {
     it('Modification category Doublon', ()=>{
         //Arrange
         cy.visit('/category')
-        const category = "SF"
         const categoryDoublon = "Nouveau"
         const id = 2;
         //Act
