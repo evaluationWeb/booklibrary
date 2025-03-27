@@ -1,5 +1,5 @@
 describe('Test Category', () => {
-    /* it('Ajout category valide ', () => {
+    it('Ajout category valide ', () => {
         //Arrange
         const cat = "SF"
         cy.visit('/category/new')
@@ -16,7 +16,7 @@ describe('Test Category', () => {
         cy.get('.btn').click()
         cy.wait(1000)
         cy.get('.container > .break-long-words').contains("An exception")
-    }) */
+    })
 
     it('Modification category valide', ()=>{
         //Arrange
