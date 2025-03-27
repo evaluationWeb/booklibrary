@@ -1,0 +1,19 @@
+{
+  "name": "book_library",
+  "version": "1.0.0",
+  "description": "**Documentation du projet** :",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+"scripts": {
+  "cypress:open": "cypress open",
+  "cypress:run": "cypress run"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.2.1"
+  }
+}
