@@ -60,8 +60,7 @@ jobs:
             
             # Cypress
             - name : Cypress-env
-              uses: actions/checkout@v4
-            - uses: cypress-io/github-action@v6
+              uses: cypress-io/github-action@v6
             # after the test run completes store videos and any screenshots
             - uses: actions/upload-artifact@v4
               with:
