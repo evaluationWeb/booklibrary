@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\EditorRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 #[ORM\Entity(repositoryClass: EditorRepository::class)]
 class Editor
@@ -14,6 +15,7 @@ class Editor
     private ?int $id = null;
 
     #[ORM\Column(length: 50, unique:true)]
+    #[NotBlank(message:"Le nom ne peut pas être vide")]
     private ?string $name = null;
 
     public function getId(): ?int
